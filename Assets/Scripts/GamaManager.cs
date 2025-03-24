@@ -20,10 +20,12 @@ public class GameManager : MonoBehaviour
     {
         Player = new Character("Chad", 10, 20000);
 
-        // 아이템 테스트 추가
         for (int i = 0; i < 11 && i < itemIcons.Length; i++)
         {
-            Player.AddItem(new Item($"Item {i + 1}", itemIcons[i]));
+            StatType type = (StatType)(i % 4); 
+            int amount = Random.Range(1, 10); 
+
+            Player.AddItem(new Item($"Item {i + 1}", itemIcons[i], type, amount));
         }
 
         uiInventory.InitInventoryUI(Player.Inventory);

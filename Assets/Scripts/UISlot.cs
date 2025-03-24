@@ -39,5 +39,12 @@ public class UISlot : MonoBehaviour
             currentItem.Equip();
 
         RefreshUI();
+
+        UIStatus statusUI = FindObjectOfType<UIStatus>();
+
+        if (statusUI != null)
+        {
+            statusUI.RefreshUI(GameManager.Instance.Player);
+        }
     }
 }

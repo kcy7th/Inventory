@@ -1,12 +1,13 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 using System.Collections.Generic;
 
 public class UIInventory : MonoBehaviour
 {
     [SerializeField] private Transform slotParent;
     [SerializeField] private UISlot slotPrefab;
-    [SerializeField] private Text inventoryText;
+    [SerializeField] private TextMeshProUGUI inventoryText;
 
     private List<UISlot> slotList = new List<UISlot>();
 
