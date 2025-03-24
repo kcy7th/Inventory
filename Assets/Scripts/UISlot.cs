@@ -22,6 +22,7 @@ public class UISlot : MonoBehaviour
             iconImage.enabled = true;
             equipMark.SetActive(currentItem.IsEquipped);
         }
+
         else
         {
             iconImage.enabled = false;
@@ -35,6 +36,7 @@ public class UISlot : MonoBehaviour
 
         if (currentItem.IsEquipped)
             currentItem.UnEquip();
+
         else
             currentItem.Equip();
 

@@ -27,24 +27,26 @@ public class Character
         Inventory.Add(item);
     }
 
-    public int GetTotalAttack()
+    public void Equip(Item item)
     {
-        int bonus = Inventory.Where(i => i.IsEquipped && i.StatType == StatType.Attack).Sum(i => i.StatAmount);
-        return BaseAttack + bonus;
+        item.Equip();
     }
-    public int GetTotalDefense()
+
+    public void UnEquip(Item item)
     {
-        int bonus = Inventory.Where(i => i.IsEquipped && i.StatType == StatType.Defense).Sum(i => i.StatAmount);
-        return BaseDefense + bonus;
+        item.UnEquip();
     }
-    public int GetTotalHP()
+
+    public int GetTotalStat(StatType type)
     {
-        int bonus = Inventory.Where(i => i.IsEquipped && i.StatType == StatType.HP).Sum(i => i.StatAmount);
-        return BaseHP + bonus;
-    }
-    public int GetTotalCrit()
-    {
-        int bonus = Inventory.Where(i => i.IsEquipped && i.StatType == StatType.Crit).Sum(i => i.StatAmount);
-        return BaseCrit + bonus;
+        int bonus = Inventory.Where(i => i.IsEquipped && i.StatType == type).Sum(i => i.StatAmount);
+        return type switch
+        {
+            StatType.Attack => BaseAttack + bonus,
+            StatType.Defense => BaseDefense + bonus,
+            StatType.HP => BaseHP + bonus,
+            StatType.Crit => BaseCrit + bonus,
+            _ => bonus
+        };
     }
 }

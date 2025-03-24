@@ -18,9 +18,9 @@ public class UIStatus : MonoBehaviour
 
     public void RefreshUI(Character character)
     {
-        attackText.text = character.GetTotalAttack().ToString();
-        defenseText.text = character.GetTotalDefense().ToString();
-        hpText.text = character.GetTotalHP().ToString();
-        critText.text = character.GetTotalCrit().ToString();
+        attackText.text = character.GetTotalStat(StatType.Attack).ToString();
+        defenseText.text = character.GetTotalStat(StatType.Defense).ToString();
+        hpText.text = character.GetTotalStat(StatType.HP).ToString();
+        critText.text = character.GetTotalStat(StatType.Crit).ToString();
     }
 }
