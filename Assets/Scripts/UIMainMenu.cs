@@ -8,14 +8,7 @@ public class UIMainMenu : MonoBehaviour
 
     private void Start()
     {
-        statusButton.onClick.AddListener(() =>
-        {
-            UIManager.Instance.ShowStatus();
-        });
-
-        inventoryButton.onClick.AddListener(() =>
-        {
-            UIManager.Instance.ShowInventory();
-        });
+        statusButton.onClick.AddListener(() => UIManager.Instance.OpenStatus());
+        inventoryButton.onClick.AddListener(() => UIManager.Instance.OpenInventory());
     }
 }

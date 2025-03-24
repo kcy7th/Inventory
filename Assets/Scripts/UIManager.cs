@@ -10,27 +10,25 @@ public class UIManager : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance == null)
-            Instance = this;
-        else
-            Destroy(gameObject);
+        if (Instance == null) Instance = this;
+        else Destroy(gameObject);
     }
 
-    public void ShowMainMenu()
+    public void OpenMainMenu()
     {
         uiMainMenu.SetActive(true);
         uiStatus.SetActive(false);
         uiInventory.SetActive(false);
     }
 
-    public void ShowStatus()
+    public void OpenStatus()
     {
         uiMainMenu.SetActive(false);
         uiStatus.SetActive(true);
         uiInventory.SetActive(false);
     }
 
-    public void ShowInventory()
+    public void OpenInventory()
     {
         uiMainMenu.SetActive(false);
         uiStatus.SetActive(false);
