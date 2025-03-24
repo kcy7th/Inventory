@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
 
     private void InitPlayerData()
     {
-        Player = new Character("Chad", 10, 20000);
+        Player = new Character("FriedPotato", 10, 20000);
 
         for (int i = 0; i < 11 && i < itemIcons.Length; i++)
         {

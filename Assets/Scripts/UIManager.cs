@@ -23,6 +23,9 @@ public class UIManager : MonoBehaviour
     {
         uiStatus.SetActive(true);
         uiInventory.SetActive(false);
+
+        UIStatus statusUI = uiStatus.GetComponent<UIStatus>();
+        statusUI.RefreshUI(GameManager.Instance.Player);
     }
 
     public void OpenInventory()
