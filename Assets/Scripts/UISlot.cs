@@ -30,6 +30,7 @@ public class UISlot : MonoBehaviour
         }
     }
 
+    // 아이템 버튼 클릭 시 장착 / 해제
     public void OnClick()
     {
         if (currentItem == null) return;
@@ -42,6 +43,7 @@ public class UISlot : MonoBehaviour
 
         RefreshUI();
 
+        // UIStatus 검색해서 스탯 UI 갱신
         UIStatus statusUI = FindObjectOfType<UIStatus>();
 
         if (statusUI != null)

@@ -13,6 +13,7 @@ public class UIInventory : MonoBehaviour
 
     public void InitInventoryUI(List<Item> items, int maxSlotCount = 120)
     {
+        // 기존 슬롯 오브젝트 제거 후 새로 생성하기
         foreach (Transform child in slotParent)
             Destroy(child.gameObject);
         slotList.Clear();

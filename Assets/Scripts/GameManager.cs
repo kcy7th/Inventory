@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
         InitPlayerData();
     }
 
+    // 아이템 데이터 랜덤하게 할당
     private void InitPlayerData()
     {
         Player = new Character("FriedPotato", 10, 20000);

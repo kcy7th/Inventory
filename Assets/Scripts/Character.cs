@@ -37,6 +37,7 @@ public class Character
         item.UnEquip();
     }
 
+    // 장착된 아이템 기반으로 스탯 계산
     public int GetTotalStat(StatType type)
     {
         int bonus = Inventory.Where(i => i.IsEquipped && i.StatType == type).Sum(i => i.StatAmount);

@@ -19,6 +19,7 @@ public class UIManager : MonoBehaviour
         uiInventory.SetActive(false);
     }
 
+    // 스탯 오픈 시 정보도 갱신
     public void OpenStatus()
     {
         uiStatus.SetActive(true);
